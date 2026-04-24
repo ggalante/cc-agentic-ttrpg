@@ -1,6 +1,6 @@
 # Story So Far
 
-_A running narrative summary updated by the DM at the end of each session._
+_A running narrative summary updated by the GM at the end of each session._
 
 ---
 

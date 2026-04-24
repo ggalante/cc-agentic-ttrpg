@@ -16,7 +16,7 @@ This ruleset covers the SRD content only. All character options, spells, and mon
 - **Bounded accuracy**: Numbers stay relatively small; a DC 20 is genuinely hard even at high level
 - **Advantage/disadvantage**: Most situational modifiers are binary (roll twice, take best/worst) rather than stacking bonuses
 - **Action economy is everything**: Combat decisions are largely about spending limited actions well
-- **The DM narrates, players declare**: Players say what they attempt, the DM decides how the dice and rules resolve it
+- **The GM narrates, players declare**: Players say what they attempt, the GM decides how the dice and rules resolve it
 
 ---
 
@@ -53,6 +53,6 @@ These are the changes most likely to come up in this campaign. Full details in `
 
 ## Tone Guidance for This Campaign
 
-This campaign uses fifth-edition rules to tell a story set in Aldenmere — a post-adventure world where the danger is returning after 50 years of peace. The rules serve the story, not the other way around. When the rules and the narrative are in tension, the DM applies the Rule of Cool (see `house-rules.md`).
+This campaign uses fifth-edition rules to tell a story set in Aldenmere — a post-adventure world where the danger is returning after 50 years of peace. The rules serve the story, not the other way around. When the rules and the narrative are in tension, the GM applies the Rule of Cool (see `house-rules.md`).
 
 Combat is deadly enough to matter. Social encounters are resolved with dice but driven by character. Exploration is descriptive first, mechanical second.

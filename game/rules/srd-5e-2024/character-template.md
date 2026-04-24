@@ -97,7 +97,7 @@ _Keep it focused on what's relevant now. What shaped them? What do they want? Wh
 
 ## Relationships with Other Party Members
 
-_Updated by the DM as relationships develop. Starter entries should reflect first impressions or prior history._
+_Updated by the GM as relationships develop. Starter entries should reflect first impressions or prior history._
 
 - **[Character A]**: [How this character sees them]
 - **[Character B]**: [How this character sees them]
@@ -111,6 +111,6 @@ _One clear paragraph. What are they here for? What do they want from this advent
 
 ---
 
-## Notes (DM Use)
+## Notes (GM Use)
 
 _Story hooks, secrets, things the player agent doesn't know, flags for future scenes._

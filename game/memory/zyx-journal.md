@@ -1,6 +1,6 @@
 # Zyx — Personal Journal
 
-_Updated by the DM after significant events. Represents Zyx's accumulated memories, opinions, and emotional state._
+_Updated by the GM after significant events. Represents Zyx's accumulated memories, opinions, and emotional state._
 
 ---
 

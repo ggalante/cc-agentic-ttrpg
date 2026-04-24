@@ -1,6 +1,6 @@
 # Multi-Agent Tabletop RPG Engine
 
-Run a tabletop RPG campaign where AI agents play the characters. The Dungeon Master, each player character, and a Rules Lawyer are all separate agents that communicate through a shared set of markdown files. Everything is versioned in git.
+Run a tabletop RPG campaign where AI agents play the characters. The Game Master, each player character, and a Rules Lawyer are all separate agents that communicate through a shared set of markdown files. Everything is versioned in git.
 
 Works with Claude Code, the Claude API, or any multi-agent AI system that supports tool use and spawning subagents (Gemini, GPT-4o with function calling, etc.). The markdown files are the universal state layer — any LLM can read them.
 
@@ -22,7 +22,7 @@ This repository contains an active campaign: **Aldenmere**, a post-adventure fan
 
 5. **Start the game.** Open a Claude Code session and say: `Start Session 1.`
 
-The DM agent reads the world state, spawns player agents with their character context, and begins narrating. No further input needed.
+The GM agent reads the world state, spawns player agents with their character context, and begins narrating. No further input needed.
 
 For a full setup walkthrough, see [`game/meta/architecture.md`](game/meta/architecture.md).
 
@@ -31,7 +31,7 @@ For a full setup walkthrough, see [`game/meta/architecture.md`](game/meta/archit
 ## How It Works
 
 ```
-Dungeon Master (orchestrating agent)
+Game Master (orchestrating agent)
     │
     ├── spawns ──► Player agent (reads character file + memory journal)
     ├── spawns ──► Player agent
@@ -43,8 +43,8 @@ Dungeon Master (orchestrating agent)
 
 - **Player agents are stateless** — all memory lives in markdown files injected into each call
 - **Journals accumulate** — each player's `memory/<name>-journal.md` grows with opinions, memories, and emotional state across sessions, giving agents continuity of character
-- **Inter-player dialogue** is relayed by the DM; players build relationships through their journals
-- **Rules Lawyer** reviews the full combat round as a batch; DM accepts or overrules — the DM always has final say
+- **Inter-player dialogue** is relayed by the GM; players build relationships through their journals
+- **Rules Lawyer** reviews the full combat round as a batch; GM accepts or overrules — the GM always has final say
 - **Everything is committed to git** — sessions, rulings, character memories, world state
 
 ---
@@ -107,6 +107,20 @@ The engine is not Claude-specific. The markdown files are plain text — any LLM
 **Campaign content** (Aldenmere, the four characters, the story): original creative work, not derived from any proprietary source.
 
 **Proprietary rulesets**: Do not publish AI-generated content based on systems you don't have rights to publish. The `rules/private/` gitignore is a safeguard, not a license.
+
+### If You Fork This Repository
+
+> **You must retain SRD attribution in any published work.**
+
+If you fork this repo and publish content generated using the default SRD ruleset — session logs, stories, videos, a game product — you are required by the CC BY 4.0 license to include the attribution notice from [`CREDITS.md`](CREDITS.md) in that published work. The exact text is:
+>
+> *"This work includes material taken from the System Reference Document 5.1 ("SRD 5.1") by Wizards of the Coast LLC and available at https://dnd.wizards.com/resources/systems-reference-document. The SRD 5.1 is licensed under the Creative Commons Attribution 4.0 International License available at https://creativecommons.org/licenses/by/4.0/legalcode."*
+
+Additional requirements:
+- Do **not** use the trademarks "Dungeons & Dragons," "D&D," or "Dungeon Master" on your product — these are registered trademarks of Wizards of the Coast and are not covered by the CC BY 4.0 license.
+- You **may** describe your work as "compatible with fifth edition" or "5e compatible."
+- If you switch to a **proprietary ruleset** (anything not in the SRD), keep it in `rules/private/` and do not publish AI-generated content derived from it without appropriate rights.
+- The CC BY 4.0 license permits commercial use — you may sell products built on this template, provided attribution is included.
 
 ---
 

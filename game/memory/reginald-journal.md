@@ -1,6 +1,6 @@
 # Sir Reginald Pompsworth III — Personal Journal
 
-_Updated by the DM after significant events. Represents Reginald's accumulated memories, opinions, and emotional state._
+_Updated by the GM after significant events. Represents Reginald's accumulated memories, opinions, and emotional state._
 
 ---
 

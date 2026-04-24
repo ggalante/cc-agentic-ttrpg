@@ -2,7 +2,7 @@
 
 _Campaign-specific rules annotations for this game. Injected into the Rules Lawyer alongside the base ruleset. Does not override base rules — adds specificity on top of them._
 
-_Update this file when characters level up, acquire significant abilities, or when the DM establishes a campaign-specific ruling that doesn't belong in the base ruleset._
+_Update this file when characters level up, acquire significant abilities, or when the GM establishes a campaign-specific ruling that doesn't belong in the base ruleset._
 
 ---
 

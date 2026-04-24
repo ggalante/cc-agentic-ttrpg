@@ -113,7 +113,7 @@ Spell DC = 8 + proficiency + spellcasting modifier.
 
 **Shove**: Replace one attack with STR (Athletics) vs. target's STR (Athletics) or DEX (Acrobatics). Success = push 5 ft or knock prone.
 
-**Flanking** *(optional rule)*: Two allies on opposite sides of a creature grant each other advantage. Not active by default — DM must explicitly enable it. Check `rules/campaign-extensions.md` for this campaign's setting.
+**Flanking** *(optional rule)*: Two allies on opposite sides of a creature grant each other advantage. Not active by default — GM must explicitly enable it. Check `rules/campaign-extensions.md` for this campaign's setting.
 
 ---
 
