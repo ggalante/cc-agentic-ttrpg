@@ -12,11 +12,11 @@ This repository contains an active campaign: **Aldenmere**, a post-adventure fan
 
 **Fork this repo, then:**
 
-1. **Delete or replace the campaign files** in `dnd/characters/`, `dnd/memory/`, and `dnd/world/` with your own, using the templates in `dnd/rules/srd-5e-2024/character-template.md` and the existing world files as a guide.
+1. **Delete or replace the campaign files** in `game/characters/`, `game/memory/`, and `game/world/` with your own, using the templates in `game/rules/srd-5e-2024/character-template.md` and the existing world files as a guide.
 
-2. **Choose your ruleset** by editing `dnd/rules/active-ruleset.md`. The default is DnD 5e 2024 SRD (safe to publish). For other systems, see [Changing the Ruleset](#changing-the-ruleset).
+2. **Choose your ruleset** by editing `game/rules/active-ruleset.md`. The default is DnD 5e 2024 SRD (safe to publish). For other systems, see [Changing the Ruleset](#changing-the-ruleset).
 
-3. **Fill in `dnd/rules/campaign-extensions.md`** with your party's character stats. This is what the Rules Lawyer uses to check mechanical correctness — keep it updated as characters level up.
+3. **Fill in `game/rules/campaign-extensions.md`** with your party's character stats. This is what the Rules Lawyer uses to check mechanical correctness — keep it updated as characters level up.
 
 4. **Commit everything** to git before starting. The agents read from the files on disk.
 
@@ -24,7 +24,7 @@ This repository contains an active campaign: **Aldenmere**, a post-adventure fan
 
 The DM agent reads the world state, spawns player agents with their character context, and begins narrating. No further input needed.
 
-For a full setup walkthrough, see [`dnd/meta/architecture.md`](dnd/meta/architecture.md).
+For a full setup walkthrough, see [`game/meta/architecture.md`](game/meta/architecture.md).
 
 ---
 
@@ -52,7 +52,7 @@ Dungeon Master (orchestrating agent)
 ## File Structure
 
 ```
-dnd/
+game/
   meta/
     architecture.md        ← Full system design, agent flow, context injection
     rules-lawyer.md        ← Rules Lawyer agent profile
@@ -80,22 +80,14 @@ dnd/
 
 The ruleset is a plugin. To switch systems:
 
-1. Edit `dnd/rules/active-ruleset.md` to point at a new ruleset directory
-2. Create the directory with the required files (see `dnd/rules/README.md` for the spec)
+1. Edit `game/rules/active-ruleset.md` to point at a new ruleset directory
+2. Create the directory with the required files (see `game/rules/README.md` for the spec)
 3. Rebuild character sheets using the new system's `character-template.md`
-4. Update `dnd/rules/campaign-extensions.md` for the new system's mechanics
+4. Update `game/rules/campaign-extensions.md` for the new system's mechanics
 
 > **Do this before Session 1.** Changing rulesets mid-campaign causes agents to operate on inconsistent rule systems. If you want a different system, start a new campaign.
 
-**Proprietary systems** (full DnD 5e beyond SRD, Daggerheart, Pathfinder, etc.): place your ruleset in `dnd/rules/private/`. This directory is gitignored. Do not publish AI-generated content based on proprietary rules.
-
-| System | Status | Notes |
-|--------|--------|-------|
-| DnD 5e 2024 SRD | ✓ Included, default | CC BY 4.0 — safe to publish |
-| DnD 5e 2024 (full) | Private only | Place in `rules/private/` |
-| Daggerheart | Private only | Requires new quickref + character template |
-| Dungeon World | Private only | PbtA — different action resolution |
-| Pathfinder 2e | Private only | Requires new quickref + character template |
+**Proprietary systems** (full DnD 5e beyond SRD, Daggerheart, Pathfinder, etc.): place your ruleset in `game/rules/private/`. This directory is gitignored. Do not publish AI-generated content based on proprietary rules.
 
 ---
 
@@ -103,14 +95,14 @@ The ruleset is a plugin. To switch systems:
 
 The engine is not Claude-specific. The markdown files are plain text — any LLM can read them. To adapt for another system:
 
-- **Gemini / GPT-4o / other**: Implement the same orchestration pattern — a main agent that reads the state files and spawns subagents with injected context. The file structure and injection logic is documented in `dnd/meta/architecture.md`.
+- **Gemini / GPT-4o / other**: Implement the same orchestration pattern — a main agent that reads the state files and spawns subagents with injected context. The file structure and injection logic is documented in `game/meta/architecture.md`.
 - **Custom agent frameworks**: The five context files injected per player call (character, journal, story-so-far, current-state, scene prompt) are the interface. Any framework that can pass these as context to a subagent will work.
 
 ---
 
 ## Legal Notes
 
-**Default ruleset (SRD)**: `dnd/rules/srd-5e-2024/` is based on the [Systems Reference Document 5.2](https://www.dndbeyond.com/srd) licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Session logs generated using this ruleset may be published freely.
+**Default ruleset (SRD)**: `game/rules/srd-5e-2024/` is based on the [Systems Reference Document 5.2](https://www.dndbeyond.com/srd) licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Session logs generated using this ruleset may be published freely.
 
 **Campaign content** (Aldenmere, the four characters, the story): original creative work, not derived from any proprietary source.
 
