@@ -112,7 +112,7 @@ Before a player attempts something highly unusual or high-stakes, the DM may cal
 ## File Structure
 
 ```
-dnd/
+game/
   meta/
     architecture.md        ← this file
     rules-lawyer.md        ← Rules Lawyer agent profile and mandate
