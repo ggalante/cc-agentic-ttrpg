@@ -24,7 +24,7 @@ This repository contains an active campaign: **Aldenmere**, a post-adventure fan
 
 The GM agent reads the world state, spawns player agents with their character context, and begins narrating. No further input needed.
 
-For a full setup walkthrough, see [`game/meta/architecture.md`](game/meta/architecture.md).
+For a full setup walkthrough, see [`engine/architecture.md`](engine/architecture.md).
 
 ---
 
@@ -52,10 +52,12 @@ Game Master (orchestrating agent)
 ## File Structure
 
 ```
+engine/
+  architecture.md          ← Full system design, agent flow, context injection
+  gm-instructions.md       ← Game Master agent instructions
+  player-instructions.md   ← Player agent behavioral spec
+  rules-lawyer.md          ← Rules Lawyer agent profile
 game/
-  meta/
-    architecture.md        ← Full system design, agent flow, context injection
-    rules-lawyer.md        ← Rules Lawyer agent profile
   world/
     lore.md                ← World history, factions, the Big Threat
     current-state.md       ← Live game state (location, HP, active quests)
@@ -95,7 +97,7 @@ The ruleset is a plugin. To switch systems:
 
 The engine is not Claude-specific. The markdown files are plain text — any LLM can read them. To adapt for another system:
 
-- **Gemini / GPT-4o / other**: Implement the same orchestration pattern — a main agent that reads the state files and spawns subagents with injected context. The file structure and injection logic is documented in `game/meta/architecture.md`.
+- **Gemini / GPT-4o / other**: Implement the same orchestration pattern — a main agent that reads the state files and spawns subagents with injected context. The file structure and injection logic is documented in `engine/architecture.md`.
 - **Custom agent frameworks**: The five context files injected per player call (character, journal, story-so-far, current-state, scene prompt) are the interface. Any framework that can pass these as context to a subagent will work.
 
 ---

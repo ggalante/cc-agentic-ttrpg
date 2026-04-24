@@ -1,1 +1,1 @@
-@game/meta/gm-instructions.md
+@engine/gm-instructions.md

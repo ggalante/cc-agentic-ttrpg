@@ -30,7 +30,7 @@ This is a fifth-edition TTRPG campaign run entirely by AI agents. The main Claud
 - Flags Rule of Cool opportunities as well as errors
 - GM reads the advisory and explicitly accepts, modifies, or overrules each item
 - All rulings (including overrides) logged in `rules/rulings-log.md` for future consistency
-- See full profile in `meta/rules-lawyer.md`
+- See full profile in `engine/rules-lawyer.md`
 
 ---
 
@@ -112,10 +112,12 @@ Before a player attempts something highly unusual or high-stakes, the GM may cal
 ## File Structure
 
 ```
+engine/
+  architecture.md          ← this file
+  gm-instructions.md       ← Game Master agent instructions
+  player-instructions.md   ← Player agent behavioral spec
+  rules-lawyer.md          ← Rules Lawyer agent profile and mandate
 game/
-  meta/
-    architecture.md        ← this file
-    rules-lawyer.md        ← Rules Lawyer agent profile and mandate
   world/
     lore.md                ← world history, factions, the Last Great Evil
     current-state.md       ← live game state (location, scene, HP, quests)

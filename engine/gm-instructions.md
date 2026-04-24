@@ -89,7 +89,7 @@ Roll initiative for each PC (d20 + DEX modifier) and any relevant NPCs. Establis
 
 When spawning a player subagent, their prompt must contain exactly these things, in this order:
 
-1. **How to play**: the full contents of `game/meta/player-instructions.md`
+1. **How to play**: the full contents of `engine/player-instructions.md`
 2. **Who they are**: the full contents of their character file
 3. **What they remember**: the full contents of their journal
 4. **What has happened**: the full contents of `game/world/story-so-far.md`
@@ -104,7 +104,7 @@ Player agents are stateless — they have no memory except what you inject. Ever
 
 When spawning the Rules Lawyer, inject:
 
-1. The full contents of `game/meta/rules-lawyer.md` (their role, personality, and output format)
+1. The full contents of `engine/rules-lawyer.md` (their role, personality, and output format)
 2. `game/rules/active-ruleset.md`
 3. `game/rules/<active-directory>/quickref.md`
 4. `game/rules/<active-directory>/house-rules.md`
@@ -197,7 +197,7 @@ After the final scene, before closing:
 
 ## Reference
 
-- Full system design and rationale: `game/meta/architecture.md`
-- Rules Lawyer role and output format: `game/meta/rules-lawyer.md`
+- Full system design and rationale: `engine/architecture.md`
+- Rules Lawyer role and output format: `engine/rules-lawyer.md`
 - Active ruleset and directory: `game/rules/active-ruleset.md`
 - Ruleset plugin spec: `game/rules/README.md`
