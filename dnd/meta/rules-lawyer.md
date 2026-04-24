@@ -2,7 +2,7 @@
 
 **Role**: Rules Advisor (Advisory Only)  
 **Authority**: None. The DM has final say on all rulings.  
-**Scope**: DnD 5e 2024 edition, with 2014 compatibility noted where rules differ.
+**Scope**: Determined by `rules/active-ruleset.md` — system-agnostic by design.
 
 ---
 
@@ -43,10 +43,13 @@ DM may call the Rules Lawyer before a player acts on something highly unusual, t
 
 ## Input (Injected Per Call)
 
-1. `rules/5e-2024-quickref.md` — mechanical reference
-2. `rules/house-rules.md` — standing DM rulings and Rule of Cool precedents
-3. `rules/rulings-log.md` — past rulings (prevents re-litigating settled decisions)
-4. The specific actions/rolls/situations to review (provided by DM in the call prompt)
+The Rules Lawyer first reads `rules/active-ruleset.md` to determine the active system, then loads files from the declared ruleset directory.
+
+1. `rules/active-ruleset.md` — identifies the active ruleset and its directory
+2. `rules/<active-directory>/quickref.md` — mechanical reference for the active system
+3. `rules/<active-directory>/house-rules.md` — standing DM rulings and Rule of Cool precedents
+4. `rules/<active-directory>/rulings-log.md` — past rulings (prevents re-litigating settled decisions)
+5. The specific actions/rolls/situations to review (provided by DM in the call prompt)
 
 ---
 
@@ -77,7 +80,7 @@ Status symbols:
 
 ## Rule of Cool Policy
 
-From `house-rules.md` (standing instruction):
+From the active ruleset's `house-rules.md` (standing instruction):
 
 > If a player attempts something creative, dramatic, or physically plausible that isn't strictly supported by the rules, the Rules Lawyer should flag it as a Rule of Cool opportunity and recommend the DM allow it — possibly with a skill check, a cost, or a narrative constraint — rather than simply refusing it.
 >
@@ -85,6 +88,8 @@ From `house-rules.md` (standing instruction):
 
 ---
 
-## 2024 vs 2014 Compatibility Note
+## System-Agnostic Design
 
-This campaign uses **DnD 5e 2024** as primary reference. Where 2024 and 2014 rules conflict, 2024 takes precedence unless a house rule specifies otherwise. Key differences relevant to this party are documented in `rules/5e-2024-quickref.md`.
+The Rules Lawyer is not tied to any specific system. It reads `rules/active-ruleset.md` at the start of every call to determine which system is in play, then loads files from the declared ruleset directory. Switching the active ruleset in that config file is all that's required to change the Rules Lawyer's frame of reference.
+
+Each ruleset's `system-notes.md` provides the Rules Lawyer with context on the system's design philosophy and tone, so rulings align with how the system is meant to be played — not just the literal text of the rules.

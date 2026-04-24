@@ -46,10 +46,11 @@ Each subagent prompt contains:
 
 ## Context Injection Per Rules Lawyer Call
 
-1. **Quick reference** (`rules/5e-2024-quickref.md`) — mechanical rules
-2. **House rules** (`rules/house-rules.md`) — standing DM rulings and Rule of Cool policy
-3. **Rulings log** (`rules/rulings-log.md`) — past rulings to avoid re-litigating settled decisions
-4. **Actions to review** — the specific declarations, rolls, and situations for this call (provided by DM)
+1. **Active ruleset config** (`rules/active-ruleset.md`) — declares which system is in play and its directory
+2. **Quick reference** (`rules/<active-directory>/quickref.md`) — mechanical rules for the active system
+3. **House rules** (`rules/<active-directory>/house-rules.md`) — standing DM rulings and Rule of Cool policy
+4. **Rulings log** (`rules/<active-directory>/rulings-log.md`) — past rulings to avoid re-litigating settled decisions
+5. **Actions to review** — the specific declarations, rolls, and situations for this call (provided by DM)
 
 ---
 
@@ -129,9 +130,16 @@ dnd/
     midge-journal.md       ← Midge's personal memories and opinions
     grunka-journal.md      ← Grunka's personal memories and opinions
   rules/
-    5e-2024-quickref.md    ← Curated mechanical reference (combat, spells, conditions)
-    house-rules.md         ← DM standing rulings; Rule of Cool policy; 2024 edition notes
-    rulings-log.md         ← Every ruling made, accepted or overruled, with reason
+    README.md              ← Ruleset plugin system: what a ruleset directory must contain
+    active-ruleset.md      ← Config: which ruleset is active and its directory path
+    .gitignore             ← Gitignores rules/private/ for proprietary systems
+    srd-5e-2024/           ← Default: DnD 5e 2024 SRD (CC BY 4.0, safe to publish)
+      system-notes.md      ← What this system is; SRD scope; 2024 vs 2014 differences
+      quickref.md          ← Mechanical rules reference
+      house-rules.md       ← DM standing rulings; Rule of Cool policy
+      rulings-log.md       ← Every ruling made, accepted or overruled, with reason
+      character-template.md ← Template for creating new PCs in this system
+    private/               ← Gitignored. Place proprietary rulesets here.
   sessions/
     session-01.md          ← (created during play)
 ```
@@ -155,8 +163,18 @@ Player subagents are explicitly instructed to make decisions their *character* w
 ### The Rule of Cool
 The DM retains final authority over all rulings. When the Rules Lawyer flags a Rule of Cool opportunity, the DM defaults to yes — possibly with a check, a cost, or a narrative constraint. Fun takes precedence over strict mechanical correctness, provided it doesn't break game integrity or undermine other players.
 
+### Ruleset Plugin System
+
+The rules engine is fully swappable. The active system is declared in `rules/active-ruleset.md`. Changing that config file is all that's required to switch systems — the Rules Lawyer, DM, and player agents all read from the declared ruleset directory.
+
+Each ruleset is a self-contained directory containing five files: `system-notes.md`, `quickref.md`, `house-rules.md`, `rulings-log.md`, and `character-template.md`. See `rules/README.md` for the full spec.
+
+**Proprietary rulesets**: Place non-SRD systems (full DnD 5e, Daggerheart, Pathfinder, etc.) in `rules/private/`. This directory is gitignored and will never be committed to a public repository.
+
+**Default ruleset**: `rules/srd-5e-2024/` — the Creative Commons-licensed SRD subset of DnD 5e 2024. Content generated using this ruleset is safe to publish.
+
 ### 2024 Edition Note
-This campaign uses DnD 5e 2024 as the primary ruleset. Key differences from 2014 that affect this party are documented in `rules/house-rules.md` and `rules/5e-2024-quickref.md`. The most significant: Frenzy no longer causes exhaustion, and Divine Smite is now a reaction.
+This campaign uses DnD 5e 2024 (SRD) as the primary ruleset. Key differences from 2014 that affect this party are documented in `rules/srd-5e-2024/system-notes.md` and `rules/srd-5e-2024/house-rules.md`. The most significant: Frenzy no longer causes exhaustion, and Divine Smite is now a reaction.
 
 ---
 

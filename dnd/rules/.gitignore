@@ -1,0 +1,4 @@
+# Private rulesets — gitignored to protect proprietary content
+# Place any non-SRD or proprietary ruleset directories here
+# Examples: full DnD 5e beyond SRD, Daggerheart, Pathfinder, etc.
+private/
