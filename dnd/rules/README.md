@@ -2,7 +2,21 @@
 
 This directory contains the mechanical rules used by the Rules Lawyer agent and the Dungeon Master. The active ruleset is declared in `active-ruleset.md`.
 
-Rulesets are self-contained directories. Swapping systems means pointing `active-ruleset.md` at a different directory — nothing else needs to change.
+Rulesets are self-contained directories. Swapping systems means pointing `active-ruleset.md` at a different directory.
+
+> **Set your ruleset before Session 1 and leave it alone.** The DM, player agents, and Rules Lawyer all load rules context at the start of every call from `active-ruleset.md`. Changing the ruleset mid-campaign causes agents to operate on inconsistent rule systems within the same session. If you want a different system, start a new campaign.
+
+---
+
+## Two Layers of Rules
+
+### 1. Ruleset (system-level, generic)
+The base rules of the game system — action economy, conditions, core class mechanics. These are reusable across any campaign using the same system. Lives in `rules/<system>/`.
+
+### 2. Campaign Extensions (campaign-level, specific)
+This campaign's specific annotations on top of the ruleset — exact character stats at current level, active optional rules, and DM clarifications that are specific to this game. Lives in `rules/campaign-extensions.md`.
+
+**Keep them separate.** The ruleset files should be reusable by anyone forking this repo. Campaign-specific details belong only in `campaign-extensions.md`.
 
 ---
 
@@ -12,11 +26,24 @@ Every ruleset directory must contain these files for the Rules Lawyer to functio
 
 | File | Purpose |
 |------|---------|
-| `system-notes.md` | What this system is, core design philosophy, tone, key differences from D&D |
-| `quickref.md` | Mechanical rules the Rules Lawyer needs: action economy, combat, conditions, spells, key class features |
-| `house-rules.md` | DM standing rulings, Rule of Cool policy, and any campaign-specific modifications |
+| `system-notes.md` | What this system is, core design philosophy, tone, key mechanical concepts |
+| `quickref.md` | Generic mechanical rules: action economy, combat, conditions, core class features |
+| `house-rules.md` | DM standing rulings, Rule of Cool policy. Keep generic — campaign-specific rulings go in `campaign-extensions.md` |
 | `rulings-log.md` | Running log of every ruling made — accepted corrections and DM overrides |
-| `character-template.md` | How to create a new player character in this system |
+| `character-template.md` | Template for creating a new PC in this system |
+
+---
+
+## Campaign Extensions File
+
+`rules/campaign-extensions.md` is always injected alongside the ruleset files. It contains:
+
+- **Character sheets (mechanical summary)**: Current stats, HP, spell slots, key ability details with exact numbers — updated when characters level up
+- **Active optional rules**: Which optional rules are on or off for this campaign (e.g. flanking, lingering injuries)
+- **Party-specific interactions**: Edge cases or ability interactions specific to this party's composition
+- **DM clarifications**: Rulings that are specific to this campaign's world or tone
+
+When creating a new campaign from this template, replace `campaign-extensions.md` with one describing your own party.
 
 ---
 
@@ -31,29 +58,16 @@ The default. Uses the Creative Commons licensed Systems Reference Document for D
 
 1. Create a new directory: `rules/<system-name>/`
 2. Copy `srd-5e-2024/character-template.md` as a starting point and adapt it
-3. Write `quickref.md` covering the system's core mechanics (focus on what comes up in play)
-4. Write `system-notes.md` explaining the system's feel and key differences from standard D&D
+3. Write `quickref.md` covering the system's core mechanics — keep it generic, no campaign-specific content
+4. Write `system-notes.md` explaining the system's feel and key mechanics
 5. Copy the empty `rulings-log.md` and `house-rules.md` stubs
-6. Point `active-ruleset.md` at your new directory
+6. Point `active-ruleset.md` at your new directory before starting play
 
 ### Notes on Proprietary Systems
 
 If you are using a system you do not have rights to publish (e.g. full DnD 5e beyond the SRD, Daggerheart, Pathfinder), place your ruleset in `rules/private/`. This directory is gitignored and will never be committed or pushed to a public repository.
 
-**Do not publish AI-generated content based on proprietary rules.** The private directory exists precisely so you can play privately without risk.
-
----
-
-## Switching Systems Mid-Campaign
-
-Switching rulesets mid-campaign requires:
-
-1. Updating `active-ruleset.md` to point at the new directory
-2. Rebuilding character sheets using the new system's `character-template.md`
-3. Updating `world/current-state.md` to reflect any mechanical changes (HP, conditions, etc.)
-4. Noting the switch in the session log
-
-The player journals and narrative files are system-agnostic and carry over unchanged.
+**Do not publish AI-generated content based on proprietary rules.**
 
 ---
 
@@ -61,7 +75,7 @@ The player journals and narrative files are system-agnostic and carry over uncha
 
 This architecture works with any tabletop RPG system that has:
 - Some form of character statistics
-- Some form of action resolution (dice, cards, etc.)
+- Some form of action resolution (dice, cards, narrative moves, etc.)
 - Some form of turn structure
 
 It has been designed with D&D-adjacent systems in mind but can accommodate:

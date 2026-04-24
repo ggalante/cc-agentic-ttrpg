@@ -1,6 +1,6 @@
 # DnD 5e 2024 — Mechanical Quick Reference
 
-_Curated reference for the Rules Lawyer. Covers the rules most likely to arise in this campaign. 2014 differences noted where relevant._
+_Generic mechanical reference for DnD 5e 2024 (SRD). Campaign-specific character stats and party-specific clarifications live in `rules/campaign-extensions.md`. 2014 differences noted where relevant._
 
 ---
 
@@ -113,7 +113,7 @@ Spell DC = 8 + proficiency + spellcasting modifier.
 
 **Shove**: Replace one attack with STR (Athletics) vs. target's STR (Athletics) or DEX (Acrobatics). Success = push 5 ft or knock prone.
 
-**Flanking** *(optional rule — DM must activate)*: Two allies on opposite sides of a creature grant each other advantage. **Not active by default in this campaign** unless DM rules otherwise.
+**Flanking** *(optional rule)*: Two allies on opposite sides of a creature grant each other advantage. Not active by default — DM must explicitly enable it. Check `rules/campaign-extensions.md` for this campaign's setting.
 
 ---
 
@@ -131,73 +131,33 @@ Spell DC = 8 + proficiency + spellcasting modifier.
 
 ---
 
-## Party-Specific Rules
+## Class Feature Reference (Generic)
 
-### Reginald (Paladin 3)
+Key features that commonly produce rules questions. For this campaign's specific characters and exact numbers, see `rules/campaign-extensions.md`.
 
-**Divine Smite** *(2024)*: When you hit with a melee weapon attack, you can expend a spell slot **as a reaction** to deal radiant damage. 1st-level slot = 2d8 radiant; each additional slot level adds 1d8. Maximum 5d8. Against undead or fiends: +1d8. **Key 2024 change**: triggered as a reaction after the hit is confirmed, not declared beforehand.
+**Divine Smite (Paladin, 2024)**: Reaction triggered after a melee hit is confirmed. Expend a spell slot: 1st = 2d8 radiant, +1d8 per slot level above 1st, max 5d8; +1d8 additional vs undead or fiends.
 
-**Lay on Hands**: Pool of 15 HP per long rest. As an action, touch a creature to heal up to the pool amount. Can also cure one disease or poison per 5 HP spent. Cannot target constructs or undead.
+**Lay on Hands (Paladin)**: Action. Pool = 5 × paladin level HP/long rest. Touch to heal up to pool amount, or spend 5 HP to cure one disease or poison. Cannot target constructs or undead.
 
-**Channel Divinity (1/short or long rest)**:
-- *Sacred Weapon*: As an action, imbue your weapon with holy energy. +3 to attack rolls, emits bright light (20 ft). Lasts 1 minute. Ends early if you drop weapon or become incapacitated.
-- *Turn the Unholy*: As an action, present holy symbol. Each fiend or undead within 30 ft that can see/hear you must succeed on a WIS save (DC 13) or be turned for 1 minute.
+**Channel Divinity (Paladin)**: 1/short or long rest. Options depend on subclass.
 
-**Lay on Hands** is an action. **Divine Smite** is a reaction. Both can occur in the same turn.
+**Portent (Divination Wizard)**: Roll 2d20 at dawn. Before any visible creature makes a d20 roll, expend one die to replace the result. Portent dice cannot be rerolled or modified by advantage/disadvantage.
 
-**Paladin Spells (2024)**: Paladin spells are prepared from the paladin spell list. Reginald prepares CHA mod + paladin level = 3 + 3 = 6 spells. Spell DC = 13. Spell attack = +5.
+**Arcane Recovery (Wizard)**: Once/day on a short rest. Recover spell slots with total levels ≤ half wizard level (rounded up). Cannot recover slots 6th level or higher.
 
----
+**Sneak Attack (Rogue)**: Once per turn (not round). Requires finesse or ranged weapon + (advantage OR ally within 5 ft of target, and no disadvantage).
 
-### Zyx (Wizard 3)
+**Cunning Action (Rogue 2+)**: Bonus action to Dash, Disengage, or Hide.
 
-**Portent**: After a long rest, roll 2d20 and record the results. Before a d20 roll is made by any visible creature, Zyx can expend one of these dice to replace the result. The Portent die result stands — it cannot itself be rerolled or modified by advantage/disadvantage or Halfling Lucky. Record current Portent dice in the character sheet at session start.
+**Rage (Barbarian)**: Bonus action. +2 melee damage, advantage on STR checks/saves, resistance to B/P/S. Ends if no attack or damage since last turn, or unconscious. Cannot cast or concentrate on spells while raging.
 
-**Arcane Recovery**: Once per day, during a short rest, recover spell slots with combined levels up to half wizard level (rounded up) = 2. Cannot recover 6th-level or higher slots.
+**Reckless Attack (Barbarian)**: Advantage on all STR melee attack rolls this turn; enemies have advantage on attacks vs. you until your next turn.
 
-**Wizard Spell Preparation**: Prepares INT mod + wizard level = 4 + 3 = 7 spells per long rest. Spell DC = 14. Spell attack = +6.
+**Frenzy (Berserker Barbarian, 2024)**: While raging, make one additional melee weapon attack as a bonus action each turn. No exhaustion cost (2024 change from 2014).
 
-**Spell Save DC 14, Spell Attack +6**.
+**Unarmored Defense (Barbarian)**: AC = 10 + DEX modifier + CON modifier (while not wearing armor).
 
----
-
-### Midge (Rogue 3)
-
-**Sneak Attack (2d6)**: Once per turn, deal extra 2d6 damage to one target when you have **advantage on the attack roll** OR when an ally is within 5 ft of the target and you don't have disadvantage. Target must be hit with a finesse or ranged weapon. Only once per turn (not once per round — can trigger on opportunity attacks on other creatures' turns).
-
-**Cunning Action**: Bonus action to Dash, Disengage, or Hide.
-
-**Mage Hand Legerdemain**: Midge's Mage Hand is invisible. Can pick locks, disarm traps, use thieves' tools, or steal/plant items via the hand from up to 30 ft. Opposed Perception vs. Midge's Sleight of Hand.
-
-**Halfling Lucky**: When Midge rolls a natural 1 on a d20, she rerolls and must use the new result. Does NOT apply to Portent dice or other replaced rolls.
-
-**Uncanny Dodge**: Not yet. Available at level 5.
-
-**Arcane Trickster Spell DC = 12, Spell Attack +4** (INT-based).
-
----
-
-### Grunka (Barbarian 3)
-
-**Rage (3/day)**: Bonus action to enter rage. Lasts 1 minute (ends early if you haven't attacked or taken damage since your last turn, or if you fall unconscious). While raging:
-- Advantage on STR checks and STR saving throws
-- +2 bonus to melee damage
-- Resistance to bludgeoning, piercing, and slashing damage
-- Cannot cast or concentrate on spells
-
-**Reckless Attack**: On your first attack of a turn, you may declare Reckless Attack to gain advantage on your STR-based melee attack rolls for that turn. Until your next turn, attack rolls against you have advantage.
-
-**Danger Sense**: Advantage on DEX saving throws against effects you can see (traps, spells). Does not apply if blinded, deafened, or incapacitated.
-
-**Frenzy** *(2024 — corrected from 2014)*: While raging, Grunka can make one additional melee weapon attack as a bonus action on each of her turns. **No exhaustion cost in 2024.** This is a significant change from the 2014 version.
-
-**Relentless Endurance (1/long rest)**: When reduced to 0 HP but not killed outright, drop to 1 HP instead.
-
-**Savage Attacks**: On a critical hit with a melee weapon, roll one extra weapon damage die.
-
-**Unarmored Defense**: AC = 10 + DEX modifier + CON modifier = 10 + 2 + 3 = **15** (or 16 with shield).
-
-**Grunka's Greataxe**: 1d12 + STR (+4). On a critical hit: roll 3d12 (base crit 2d12 + Savage Attacks 1d12) + 4.
+**Halfling Lucky**: On a natural 1, reroll and use the new result. Does not apply when a Portent die or other effect replaces the roll rather than rerolling it.
 
 ---
 

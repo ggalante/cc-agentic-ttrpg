@@ -46,11 +46,12 @@ Each subagent prompt contains:
 
 ## Context Injection Per Rules Lawyer Call
 
-1. **Active ruleset config** (`rules/active-ruleset.md`) — declares which system is in play and its directory
-2. **Quick reference** (`rules/<active-directory>/quickref.md`) — mechanical rules for the active system
+1. **Active ruleset config** (`rules/active-ruleset.md`) — declares which system is in play, its directory, and the campaign-extensions file
+2. **Quick reference** (`rules/<active-directory>/quickref.md`) — generic mechanical rules for the active system
 3. **House rules** (`rules/<active-directory>/house-rules.md`) — standing DM rulings and Rule of Cool policy
 4. **Rulings log** (`rules/<active-directory>/rulings-log.md`) — past rulings to avoid re-litigating settled decisions
-5. **Actions to review** — the specific declarations, rolls, and situations for this call (provided by DM)
+5. **Campaign extensions** (`rules/campaign-extensions.md`) — this campaign's character stats and specific annotations
+6. **Actions to review** — the specific declarations, rolls, and situations for this call (provided by DM)
 
 ---
 

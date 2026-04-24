@@ -1,89 +1,51 @@
-# cc-dnd — Multi-Agent DnD with Claude
+# Multi-Agent Tabletop RPG Engine
 
-A fully AI-driven tabletop RPG campaign using Claude subagents. The main Claude agent acts as Dungeon Master. Four player character subagents make autonomous decisions based on their characters' personalities. A Rules Lawyer subagent reviews mechanical correctness after each combat round. All game state lives in markdown files, versioned in git.
+Run a tabletop RPG campaign where AI agents play the characters. The Dungeon Master, each player character, and a Rules Lawyer are all separate agents that communicate through a shared set of markdown files. Everything is versioned in git.
 
-This repository contains an active campaign set in **Aldenmere** — a post-adventure fantasy world where the danger is slowly returning after 50 years of peace. Fork it to run your own game.
+Works with Claude Code, the Claude API, or any multi-agent AI system that supports tool use and spawning subagents (Gemini, GPT-4o with function calling, etc.). The markdown files are the universal state layer — any LLM can read them.
+
+This repository contains an active campaign: **Aldenmere**, a post-adventure fantasy world where the danger is returning after 50 years of peace, played with four AI-driven characters using DnD 5e 2024 (SRD).
+
+---
+
+## Quick Start
+
+**Fork this repo, then:**
+
+1. **Delete or replace the campaign files** in `dnd/characters/`, `dnd/memory/`, and `dnd/world/` with your own, using the templates in `dnd/rules/srd-5e-2024/character-template.md` and the existing world files as a guide.
+
+2. **Choose your ruleset** by editing `dnd/rules/active-ruleset.md`. The default is DnD 5e 2024 SRD (safe to publish). For other systems, see [Changing the Ruleset](#changing-the-ruleset).
+
+3. **Fill in `dnd/rules/campaign-extensions.md`** with your party's character stats. This is what the Rules Lawyer uses to check mechanical correctness — keep it updated as characters level up.
+
+4. **Commit everything** to git before starting. The agents read from the files on disk.
+
+5. **Start the game.** Open a Claude Code session and say: `Start Session 1.`
+
+The DM agent reads the world state, spawns player agents with their character context, and begins narrating. No further input needed.
+
+For a full setup walkthrough, see [`dnd/meta/architecture.md`](dnd/meta/architecture.md).
 
 ---
 
 ## How It Works
 
 ```
-Dungeon Master (main agent)
+Dungeon Master (orchestrating agent)
     │
-    ├─── spawns ──► Player: Reginald (Paladin)
-    ├─── spawns ──► Player: Zyx (Wizard)
-    ├─── spawns ──► Player: Midge (Rogue)
-    ├─── spawns ──► Player: Grunka (Barbarian)
+    ├── spawns ──► Player agent (reads character file + memory journal)
+    ├── spawns ──► Player agent
+    ├── spawns ──► Player agent
+    ├── spawns ──► Player agent
     │
-    └─── spawns ──► Rules Lawyer (advisory, combat rounds only)
+    └── spawns ──► Rules Lawyer (after each combat round, advisory only)
 ```
 
-- **Player agents** are stateless — all memory lives in markdown files injected into each call
-- **Inter-player dialogue** is relayed by the DM; players build opinions of each other through their journals
-- **Rules Lawyer** reviews the full combat round as a batch after all players declare; DM accepts or overrules
-- **Everything is committed to git** — every session, every ruling, every character memory update
-
-Full architecture details: [`dnd/meta/architecture.md`](dnd/meta/architecture.md)
-
----
-
-## Fork and Run Your Own Game
-
-### 1. Fork This Repository
-
-Fork on GitHub. Clone your fork locally. The campaign files in `dnd/` are the starting point — you can keep Aldenmere and the existing characters, or replace them entirely.
-
-### 2. Create Your Characters
-
-Copy [`dnd/rules/srd-5e-2024/character-template.md`](dnd/rules/srd-5e-2024/character-template.md) for each player character. Fill in every section — the personality and speech pattern sections are the most important. They drive how the player agent behaves.
-
-Save each character to `dnd/characters/<name>.md` and create a matching starter journal at `dnd/memory/<name>-journal.md`.
-
-Aim for **four characters with contrasting personalities** — the friction between them is where the fun comes from.
-
-### 3. Build Your World
-
-Edit or replace:
-- [`dnd/world/lore.md`](dnd/world/lore.md) — history, factions, the Big Threat
-- [`dnd/world/current-state.md`](dnd/world/current-state.md) — where the party is and what's happening right now
-- [`dnd/world/story-so-far.md`](dnd/world/story-so-far.md) — running narrative summary (starts empty)
-
-### 4. Choose Your Ruleset
-
-The default ruleset is **DnD 5e 2024 (SRD)** — the Creative Commons-licensed subset of the rules. Content generated using it is safe to publish.
-
-To use a different system:
-
-1. Edit [`dnd/rules/active-ruleset.md`](dnd/rules/active-ruleset.md) to point at your ruleset directory
-2. Create the ruleset directory with the required files (see [`dnd/rules/README.md`](dnd/rules/README.md))
-3. Update character sheets to match the new system
-
-**Proprietary systems** (full DnD 5e beyond SRD, Daggerheart, Pathfinder, etc.): place your ruleset in `dnd/rules/private/`. This directory is gitignored and will never be committed. Do not publish AI-generated content based on proprietary rules.
-
-### 5. Start the Game
-
-Open a Claude Code session in your forked repository and say:
-
-> "Start Session 1."
-
-The DM agent will read the world state, spawn player agents with their character context, and begin narrating. No further input needed — watch the party make their own decisions.
-
----
-
-## Ruleset Options
-
-| System | Status | Notes |
-|--------|--------|-------|
-| DnD 5e 2024 (SRD) | ✓ Included, default | CC BY 4.0 — safe to publish |
-| DnD 5e 2024 (full) | Private only | Place in `rules/private/` |
-| DnD 5e 2014 | Private only | Largely compatible with 2024 SRD mechanics |
-| Daggerheart | Private only | Requires new quickref and character template |
-| Dungeon World | Private only | PbtA — requires new quickref and character template |
-| Pathfinder 2e | Private only | Requires new quickref and character template |
-| Other | Private only | See `rules/README.md` for what a ruleset needs |
-
-Adding a new system means writing five files in a new directory. See [`dnd/rules/README.md`](dnd/rules/README.md) for the spec.
+- **Player agents are stateless** — all memory lives in markdown files injected into each call
+- **Journals accumulate** — each player's `memory/<name>-journal.md` grows with opinions, memories, and emotional state across sessions, giving agents continuity of character
+- **Inter-player dialogue** is relayed by the DM; players build relationships through their journals
+- **Rules Lawyer** reviews the full combat round as a batch; DM accepts or overrules — the DM always has final say
+- **Everything is committed to git** — sessions, rulings, character memories, world state
 
 ---
 
@@ -92,19 +54,20 @@ Adding a new system means writing five files in a new directory. See [`dnd/rules
 ```
 dnd/
   meta/
-    architecture.md        ← Full system design and agent flow
+    architecture.md        ← Full system design, agent flow, context injection
     rules-lawyer.md        ← Rules Lawyer agent profile
   world/
     lore.md                ← World history, factions, the Big Threat
     current-state.md       ← Live game state (location, HP, active quests)
-    story-so-far.md        ← Cumulative narrative summary
+    story-so-far.md        ← Cumulative narrative summary (updated each session)
   characters/
     <name>.md              ← One file per PC: stats, personality, backstory
   memory/
     <name>-journal.md      ← One journal per PC: memories, opinions, goals
   rules/
-    README.md              ← Ruleset plugin spec
-    active-ruleset.md      ← Which ruleset is active
+    README.md              ← Ruleset plugin spec and campaign-extensions guide
+    active-ruleset.md      ← Which ruleset is active (configure before Session 1)
+    campaign-extensions.md ← This campaign's character stats and specific annotations
     srd-5e-2024/           ← Default ruleset (DnD 5e 2024 SRD)
     private/               ← Gitignored — proprietary rulesets go here
   sessions/
@@ -113,16 +76,48 @@ dnd/
 
 ---
 
+## Changing the Ruleset
+
+The ruleset is a plugin. To switch systems:
+
+1. Edit `dnd/rules/active-ruleset.md` to point at a new ruleset directory
+2. Create the directory with the required files (see `dnd/rules/README.md` for the spec)
+3. Rebuild character sheets using the new system's `character-template.md`
+4. Update `dnd/rules/campaign-extensions.md` for the new system's mechanics
+
+> **Do this before Session 1.** Changing rulesets mid-campaign causes agents to operate on inconsistent rule systems. If you want a different system, start a new campaign.
+
+**Proprietary systems** (full DnD 5e beyond SRD, Daggerheart, Pathfinder, etc.): place your ruleset in `dnd/rules/private/`. This directory is gitignored. Do not publish AI-generated content based on proprietary rules.
+
+| System | Status | Notes |
+|--------|--------|-------|
+| DnD 5e 2024 SRD | ✓ Included, default | CC BY 4.0 — safe to publish |
+| DnD 5e 2024 (full) | Private only | Place in `rules/private/` |
+| Daggerheart | Private only | Requires new quickref + character template |
+| Dungeon World | Private only | PbtA — different action resolution |
+| Pathfinder 2e | Private only | Requires new quickref + character template |
+
+---
+
+## Using a Different AI System
+
+The engine is not Claude-specific. The markdown files are plain text — any LLM can read them. To adapt for another system:
+
+- **Gemini / GPT-4o / other**: Implement the same orchestration pattern — a main agent that reads the state files and spawns subagents with injected context. The file structure and injection logic is documented in `dnd/meta/architecture.md`.
+- **Custom agent frameworks**: The five context files injected per player call (character, journal, story-so-far, current-state, scene prompt) are the interface. Any framework that can pass these as context to a subagent will work.
+
+---
+
 ## Legal Notes
 
-**Default ruleset (SRD)**: The `dnd/rules/srd-5e-2024/` ruleset is based on the [Systems Reference Document 5.2](https://www.dndbeyond.com/srd) licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Session logs and content generated using this ruleset may be published freely.
+**Default ruleset (SRD)**: `dnd/rules/srd-5e-2024/` is based on the [Systems Reference Document 5.2](https://www.dndbeyond.com/srd) licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Session logs generated using this ruleset may be published freely.
 
-**Proprietary rulesets**: If you use a proprietary system via `rules/private/`, do not publish AI-generated content based on it. The gitignore on that directory is a safeguard, not a license.
+**Campaign content** (Aldenmere, the four characters, the story): original creative work, not derived from any proprietary source.
 
-**This repository's campaign content** (Aldenmere, the four characters, the story): original creative work, not derived from any proprietary source.
+**Proprietary rulesets**: Do not publish AI-generated content based on systems you don't have rights to publish. The `rules/private/` gitignore is a safeguard, not a license.
 
 ---
 
 ## Contributing
 
-Issues and PRs welcome for improvements to the architecture, agent prompting strategies, or the ruleset plugin system. Campaign-specific content (characters, world lore) is specific to this playthrough and not expected to generalize.
+PRs welcome for improvements to the architecture, agent prompting strategies, or the ruleset plugin system. Campaign-specific content (the Aldenmere characters and story) is specific to this playthrough.
