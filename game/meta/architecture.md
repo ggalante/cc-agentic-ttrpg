@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a Dungeons & Dragons campaign run entirely by AI agents. The main Claude agent acts as the **Dungeon Master**. Four **Player Character (PC) subagents** are spawned each turn using the Claude Agent SDK, one per character. A fifth subagent, the **Rules Lawyer**, reviews mechanical correctness in an advisory capacity. Each subagent fully embodies its role and makes autonomous decisions — the human observer does not direct the players.
+This is a fifth-edition TTRPG campaign run entirely by AI agents. The main Claude agent acts as the **Dungeon Master**. Four **Player Character (PC) subagents** are spawned each turn using the Claude Agent SDK, one per character. A fifth subagent, the **Rules Lawyer**, reviews mechanical correctness in an advisory capacity. Each subagent fully embodies its role and makes autonomous decisions — the human observer does not direct the players.
 
 ---
 

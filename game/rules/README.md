@@ -78,8 +78,8 @@ This architecture works with any tabletop RPG system that has:
 - Some form of action resolution (dice, cards, narrative moves, etc.)
 - Some form of turn structure
 
-It has been designed with D&D-adjacent systems in mind but can accommodate:
-- **D&D-likes**: Pathfinder, OSR games, Level Up: Advanced 5e
+It has been designed with fifth-edition systems in mind but can accommodate:
+- **5e-likes**: Pathfinder, OSR games, Level Up: Advanced 5e
 - **PbtA systems**: Dungeon World, Masks, Blades in the Dark
 - **Narrative systems**: Daggerheart, Ironsworn, Trophy
 - **Anything else**: adapt the quickref and character-template to fit the system's actual mechanics

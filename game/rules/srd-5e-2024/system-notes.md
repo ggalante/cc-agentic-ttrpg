@@ -2,11 +2,11 @@
 
 ## What This System Is
 
-Dungeons & Dragons 5th Edition (2024 revision) is a high-fantasy tabletop roleplaying game published by Wizards of the Coast. The Systems Reference Document (SRD) is the Creative Commons-licensed subset of the rules, available for free use and publication under CC BY 4.0.
+A fifth-edition high-fantasy tabletop roleplaying game. The Systems Reference Document (SRD 5.1) is the Creative Commons-licensed subset of the rules, available for free use and publication under CC BY 4.0. See `/CREDITS.md` for required attribution.
 
 This ruleset covers the SRD content only. All character options, spells, and monsters used in this campaign are drawn from the SRD.
 
-**Legal reference**: [SRD 5.2 (2024)](https://www.dndbeyond.com/srd) — CC BY 4.0
+**Legal reference**: [System Reference Document 5.1](https://dnd.wizards.com/resources/systems-reference-document) by Wizards of the Coast LLC — CC BY 4.0. This directory documents 2024 edition mechanical changes; the licensed SRD content is drawn from SRD 5.1.
 
 ---
 
@@ -53,6 +53,6 @@ These are the changes most likely to come up in this campaign. Full details in `
 
 ## Tone Guidance for This Campaign
 
-This campaign uses D&D 5e to tell a story set in Aldenmere — a post-adventure world where the danger is returning after 50 years of peace. The rules serve the story, not the other way around. When the rules and the narrative are in tension, the DM applies the Rule of Cool (see `house-rules.md`).
+This campaign uses fifth-edition rules to tell a story set in Aldenmere — a post-adventure world where the danger is returning after 50 years of peace. The rules serve the story, not the other way around. When the rules and the narrative are in tension, the DM applies the Rule of Cool (see `house-rules.md`).
 
 Combat is deadly enough to matter. Social encounters are resolved with dice but driven by character. Exploration is descriptive first, mechanical second.

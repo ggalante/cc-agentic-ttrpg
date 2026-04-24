@@ -102,7 +102,7 @@ The engine is not Claude-specific. The markdown files are plain text — any LLM
 
 ## Legal Notes
 
-**Default ruleset (SRD)**: `game/rules/srd-5e-2024/` is based on the [Systems Reference Document 5.2](https://www.dndbeyond.com/srd) licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Session logs generated using this ruleset may be published freely.
+**Default ruleset (SRD)**: `game/rules/srd-5e-2024/` uses content from the [System Reference Document 5.1](https://dnd.wizards.com/resources/systems-reference-document) ("SRD 5.1") by Wizards of the Coast LLC, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode). Session logs generated using this ruleset may be published freely. See [`CREDITS.md`](CREDITS.md) for the required attribution notice you must include in any published work.
 
 **Campaign content** (Aldenmere, the four characters, the story): original creative work, not derived from any proprietary source.
 
