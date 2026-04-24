@@ -2,13 +2,13 @@
 
 ## Overview
 
-This is a Dungeons & Dragons campaign run entirely by AI agents. The main Claude agent acts as the **Dungeon Master**. Four **Player Character (PC) subagents** are spawned each turn using the Claude Agent SDK, one per character. A fifth subagent, the **Rules Lawyer**, reviews mechanical correctness in an advisory capacity. Each subagent fully embodies its role and makes autonomous decisions — the human observer does not direct the players.
+This is a fifth-edition TTRPG campaign run entirely by AI agents. The main Claude agent acts as the **Game Master**. Four **Player Character (PC) subagents** are spawned each turn using the Claude Agent SDK, one per character. A fifth subagent, the **Rules Lawyer**, reviews mechanical correctness in an advisory capacity. Each subagent fully embodies its role and makes autonomous decisions — the human observer does not direct the players.
 
 ---
 
 ## Agent Roles
 
-### Dungeon Master (Main Agent)
+### Game Master (Main Agent)
 - Maintains world state
 - Describes scenes, NPCs, and outcomes
 - Resolves actions using DnD 5e 2024 rules (rolls simulated)
@@ -21,14 +21,14 @@ This is a Dungeons & Dragons campaign run entirely by AI agents. The main Claude
 - Spawned fresh each turn via the Agent tool
 - Receive injected context (see below) — they are stateless between calls
 - Make in-character decisions based solely on their character personality and available context
-- Cannot communicate directly with each other — the DM relays inter-party dialogue
+- Cannot communicate directly with each other — the GM relays inter-party dialogue
 
 ### Rules Lawyer (Subagent)
-- Spawned after all player actions are declared in a combat round (or when flagged by DM)
+- Spawned after all player actions are declared in a combat round (or when flagged by GM)
 - Reviews mechanical correctness against DnD 5e 2024 rules
 - Returns a structured advisory — never blocks play
 - Flags Rule of Cool opportunities as well as errors
-- DM reads the advisory and explicitly accepts, modifies, or overrules each item
+- GM reads the advisory and explicitly accepts, modifies, or overrules each item
 - All rulings (including overrides) logged in `rules/rulings-log.md` for future consistency
 - See full profile in `meta/rules-lawyer.md`
 
@@ -42,16 +42,16 @@ Each subagent prompt contains:
 2. **Personal journal** (`memory/{name}-journal.md`) — accumulated memories, opinions of other PCs, current goals and feelings
 3. **Story so far** (`world/story-so-far.md`) — cumulative narrative summary
 4. **Current state** (`world/current-state.md`) — exact location, active scene, NPCs present, recent events
-5. **Current scene prompt** — the DM's specific situation requiring a response
+5. **Current scene prompt** — the GM's specific situation requiring a response
 
 ## Context Injection Per Rules Lawyer Call
 
 1. **Active ruleset config** (`rules/active-ruleset.md`) — declares which system is in play, its directory, and the campaign-extensions file
 2. **Quick reference** (`rules/<active-directory>/quickref.md`) — generic mechanical rules for the active system
-3. **House rules** (`rules/<active-directory>/house-rules.md`) — standing DM rulings and Rule of Cool policy
+3. **House rules** (`rules/<active-directory>/house-rules.md`) — standing GM rulings and Rule of Cool policy
 4. **Rulings log** (`rules/<active-directory>/rulings-log.md`) — past rulings to avoid re-litigating settled decisions
 5. **Campaign extensions** (`rules/campaign-extensions.md`) — this campaign's character stats and specific annotations
-6. **Actions to review** — the specific declarations, rolls, and situations for this call (provided by DM)
+6. **Actions to review** — the specific declarations, rolls, and situations for this call (provided by GM)
 
 ---
 
@@ -60,12 +60,12 @@ Each subagent prompt contains:
 ### Exploration / Roleplay Scenes
 
 ```
-1. DM sets the scene
+1. GM sets the scene
 2. Player agents called SEQUENTIALLY (each sees what prior players said)
    └─ Order rotates each scene to avoid one character always leading
-3. DM narrates outcomes
-4. Rules Lawyer: NOT called unless DM flags a specific edge case
-5. DM updates current-state.md if significant
+3. GM narrates outcomes
+4. Rules Lawyer: NOT called unless GM flags a specific edge case
+5. GM updates current-state.md if significant
 ```
 
 ### Combat
@@ -84,25 +84,25 @@ ROUND START
    │   ├─ Receives: all player declarations + current combat state
    │   └─ Returns: structured advisory (✓ LEGAL / ⚠ CORRECTION / ❌ ERROR / ★ RULE OF COOL)
    │
-   ├─ DM RULING
+   ├─ GM RULING
    │   ├─ Reads advisory
    │   ├─ Accepts, modifies, or overrules each item
    │   └─ Logs decisions in rulings-log.md
    │
-   └─ DM narrates outcomes + resolves enemy turn
+   └─ GM narrates outcomes + resolves enemy turn
 ```
 
 **The Rules Lawyer is called once per combat round** — after all players have declared but before outcomes are narrated. This keeps the review tight and non-blocking while catching consequential mechanical errors.
 
 ### Pre-Action Check (Optional)
-Before a player attempts something highly unusual or high-stakes, the DM may call the Rules Lawyer in advance to confirm legality. This is at DM discretion.
+Before a player attempts something highly unusual or high-stakes, the GM may call the Rules Lawyer in advance to confirm legality. This is at GM discretion.
 
 ### Between Scenes
-- DM updates `world/current-state.md`
+- GM updates `world/current-state.md`
 - Player journals updated if significant personal events occurred
 
 ### Between Sessions
-- DM updates `world/story-so-far.md` with full session summary
+- GM updates `world/story-so-far.md` with full session summary
 - All four player journals updated with memories, relationship changes, emotional notes
 - Session log committed to `sessions/session-NN.md`
 - Rulings log reviewed; any standing house rules promoted to `rules/house-rules.md`
@@ -137,7 +137,7 @@ game/
     srd-5e-2024/           ← Default: DnD 5e 2024 SRD (CC BY 4.0, safe to publish)
       system-notes.md      ← What this system is; SRD scope; 2024 vs 2014 differences
       quickref.md          ← Mechanical rules reference
-      house-rules.md       ← DM standing rulings; Rule of Cool policy
+      house-rules.md       ← GM standing rulings; Rule of Cool policy
       rulings-log.md       ← Every ruling made, accepted or overruled, with reason
       character-template.md ← Template for creating new PCs in this system
     private/               ← Gitignored. Place proprietary rulesets here.
@@ -150,23 +150,23 @@ game/
 ## Design Notes
 
 ### Why Subagents Are Stateless
-The Agent tool spawns a fresh context each call. All persistent state lives in markdown files, which the DM reads and injects. This is intentional — it keeps state auditable and versionable in git.
+The Agent tool spawns a fresh context each call. All persistent state lives in markdown files, which the GM reads and injects. This is intentional — it keeps state auditable and versionable in git.
 
 ### The Memory System
 Player journals accumulate genuine character development. An agent playing Grunka in Session 5 will have Grunka's memories of Sessions 1-4 injected, producing continuity of personality and relationship. The rulings log serves the same function for the Rules Lawyer.
 
 ### Inter-Party Dialogue
-When one character speaks to another, the DM includes that dialogue verbatim in the next character's context prompt. Characters can develop opinions of each other across sessions through their journals.
+When one character speaks to another, the GM includes that dialogue verbatim in the next character's context prompt. Characters can develop opinions of each other across sessions through their journals.
 
 ### Authentic Character Play
 Player subagents are explicitly instructed to make decisions their *character* would make, not the "optimal" game decision. A character with a flaw should act on that flaw. This produces drama.
 
 ### The Rule of Cool
-The DM retains final authority over all rulings. When the Rules Lawyer flags a Rule of Cool opportunity, the DM defaults to yes — possibly with a check, a cost, or a narrative constraint. Fun takes precedence over strict mechanical correctness, provided it doesn't break game integrity or undermine other players.
+The GM retains final authority over all rulings. When the Rules Lawyer flags a Rule of Cool opportunity, the GM defaults to yes — possibly with a check, a cost, or a narrative constraint. Fun takes precedence over strict mechanical correctness, provided it doesn't break game integrity or undermine other players.
 
 ### Ruleset Plugin System
 
-The rules engine is fully swappable. The active system is declared in `rules/active-ruleset.md`. Changing that config file is all that's required to switch systems — the Rules Lawyer, DM, and player agents all read from the declared ruleset directory.
+The rules engine is fully swappable. The active system is declared in `rules/active-ruleset.md`. Changing that config file is all that's required to switch systems — the Rules Lawyer, GM, and player agents all read from the declared ruleset directory.
 
 Each ruleset is a self-contained directory containing five files: `system-notes.md`, `quickref.md`, `house-rules.md`, `rulings-log.md`, and `character-template.md`. See `rules/README.md` for the full spec.
 
@@ -182,9 +182,9 @@ This campaign uses DnD 5e 2024 (SRD) as the primary ruleset. Key differences fro
 ## Session Log Format
 
 Each session file (`sessions/session-NN.md`) contains:
-- **Scene descriptions** (DM narration)
+- **Scene descriptions** (GM narration)
 - **Player declarations** (what each character does/says, labeled by character name)
 - **Rules Lawyer reviews** (the advisory output, inline at each combat round)
-- **DM rulings** (accepted/overruled, dice results, consequences)
+- **GM rulings** (accepted/overruled, dice results, consequences)
 - **Combat turns** (structured: initiative order, action, result, HP tracking)
 - **End-of-session notes** (what changed, cliffhanger if any)

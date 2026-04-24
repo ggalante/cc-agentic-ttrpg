@@ -61,7 +61,7 @@ North of Mosswick. The old dungeon complex, now partly a grain warehouse. The me
 
 ---
 
-## The Threat (DM Knowledge — Not Player Knowledge)
+## The Threat (GM Knowledge — Not Player Knowledge)
 
 The Void King's seal is weakening. Not broken — weakening. Something is feeding power back into it from outside. The entity is still contained but it is becoming aware again, and its awareness alone is enough to corrupt the land nearby.
 
@@ -69,7 +69,7 @@ The source of the weakening: a **Void Shard**, a fragment of the original ritual
 
 The corruption is spreading outward from the seal's location, which is deep beneath Greyveil. The dragon in the Mosswick mill isn't a coincidence — ancient creatures can sense the disturbance. He's not causing it. He fled to it, instinctively, because it's familiar. He remembers the last time.
 
-The person collecting the shards: unknown. Their goal: unknown (to players). The DM should develop this as the campaign progresses.
+The person collecting the shards: unknown. Their goal: unknown (to players). The GM should develop this as the campaign progresses.
 
 ---
 

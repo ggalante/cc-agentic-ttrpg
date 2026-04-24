@@ -1,6 +1,6 @@
 # Grunka — Feelings Journal
 
-_Updated by the DM after significant events. Represents Grunka's accumulated memories, observations, and emotional notes on the party._
+_Updated by the GM after significant events. Represents Grunka's accumulated memories, observations, and emotional notes on the party._
 
 ---
 

@@ -1,9 +1,9 @@
 # Active Ruleset Configuration
 
-_Read by the Rules Lawyer agent and the DM at the start of every session._
+_Read by the Rules Lawyer agent and the GM at the start of every session._
 
 > **Configure before your first session. Do not change this file mid-campaign.**
-> The agents — DM, players, and Rules Lawyer — all load their mechanical context from this file at the start of each call. Changing the ruleset mid-campaign will cause agents to operate on different rule systems across the same session, producing inconsistent and confusing results. If you want to try a different system, start a new campaign.
+> The agents — GM, players, and Rules Lawyer — all load their mechanical context from this file at the start of each call. Changing the ruleset mid-campaign will cause agents to operate on different rule systems across the same session, producing inconsistent and confusing results. If you want to try a different system, start a new campaign.
 
 ---
 

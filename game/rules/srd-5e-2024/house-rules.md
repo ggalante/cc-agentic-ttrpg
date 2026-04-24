@@ -1,6 +1,6 @@
-# House Rules & DM Standing Rulings
+# House Rules & GM Standing Rulings
 
-_Maintained by the DM. Updated when a new ruling is made. The Rules Lawyer treats everything in this file as settled law._
+_Maintained by the GM. Updated when a new ruling is made. The Rules Lawyer treats everything in this file as settled law._
 
 ---
 
@@ -8,13 +8,13 @@ _Maintained by the DM. Updated when a new ruling is made. The Rules Lawyer treat
 
 This is the most important rule in this campaign.
 
-If a player attempts something creative, dramatically satisfying, or cinematically excellent that bends or exceeds the strict rules, the DM should allow it — or actively encourage it — provided:
+If a player attempts something creative, dramatically satisfying, or cinematically excellent that bends or exceeds the strict rules, the GM should allow it — or actively encourage it — provided:
 
 1. It does not make the player permanently invincible or trivialize the challenge
 2. It does not undermine another player's moment or agency
 3. It does not break a core mechanic in a way that cascades
 
-When the Rules Lawyer flags a **★ RULE OF COOL** item, the DM defaults to **yes, possibly with a check or a cost**, not no.
+When the Rules Lawyer flags a **★ RULE OF COOL** item, the GM defaults to **yes, possibly with a check or a cost**, not no.
 
 Examples of Rule of Cool applications:
 - A player wants to grab a chandelier and swing across the room to attack — not in the rules, but allow it with an Athletics or Acrobatics check, and if it succeeds, let the attack have advantage
@@ -29,14 +29,14 @@ _None yet — populated as the campaign progresses._
 
 ---
 
-## Ruling Format (for DM use when adding entries)
+## Ruling Format (for GM use when adding entries)
 
 ```
 ### [Ruling Name]
 **Session**: [session number]
 **Situation**: [what came up]
 **Ruling**: [what was decided]
-**Basis**: [RAW / RAI / Rule of Cool / DM discretion]
+**Basis**: [RAW / RAI / Rule of Cool / GM discretion]
 **Precedent**: [applies going forward / one-time ruling]
 ```
 

@@ -1,6 +1,6 @@
 # Midge Thistlewick — Personal Journal
 
-_Updated by the DM after significant events. Represents Midge's accumulated memories, opinions, and emotional state. Note: Midge's journal is also the working draft of Volume 48 of the Midge Chronicles._
+_Updated by the GM after significant events. Represents Midge's accumulated memories, opinions, and emotional state. Note: Midge's journal is also the working draft of Volume 48 of the Midge Chronicles._
 
 ---
 

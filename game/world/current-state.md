@@ -1,6 +1,6 @@
 # Current Game State
 
-_Updated by the DM after each scene. This is the live state of the world._
+_Updated by the GM after each scene. This is the live state of the world._
 
 ---
 
@@ -46,7 +46,7 @@ _Updated by the DM after each scene. This is the live state of the world._
 
 ---
 
-## World Flags (DM Tracking)
+## World Flags (GM Tracking)
 
 - [ ] Party has learned about Heldra Stoneback
 - [ ] Party has visited Heldra

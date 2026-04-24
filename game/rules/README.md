@@ -1,10 +1,10 @@
 # Ruleset Plugin System
 
-This directory contains the mechanical rules used by the Rules Lawyer agent and the Dungeon Master. The active ruleset is declared in `active-ruleset.md`.
+This directory contains the mechanical rules used by the Rules Lawyer agent and the Game Master. The active ruleset is declared in `active-ruleset.md`.
 
 Rulesets are self-contained directories. Swapping systems means pointing `active-ruleset.md` at a different directory.
 
-> **Set your ruleset before Session 1 and leave it alone.** The DM, player agents, and Rules Lawyer all load rules context at the start of every call from `active-ruleset.md`. Changing the ruleset mid-campaign causes agents to operate on inconsistent rule systems within the same session. If you want a different system, start a new campaign.
+> **Set your ruleset before Session 1 and leave it alone.** The GM, player agents, and Rules Lawyer all load rules context at the start of every call from `active-ruleset.md`. Changing the ruleset mid-campaign causes agents to operate on inconsistent rule systems within the same session. If you want a different system, start a new campaign.
 
 ---
 
@@ -14,7 +14,7 @@ Rulesets are self-contained directories. Swapping systems means pointing `active
 The base rules of the game system — action economy, conditions, core class mechanics. These are reusable across any campaign using the same system. Lives in `rules/<system>/`.
 
 ### 2. Campaign Extensions (campaign-level, specific)
-This campaign's specific annotations on top of the ruleset — exact character stats at current level, active optional rules, and DM clarifications that are specific to this game. Lives in `rules/campaign-extensions.md`.
+This campaign's specific annotations on top of the ruleset — exact character stats at current level, active optional rules, and GM clarifications that are specific to this game. Lives in `rules/campaign-extensions.md`.
 
 **Keep them separate.** The ruleset files should be reusable by anyone forking this repo. Campaign-specific details belong only in `campaign-extensions.md`.
 
@@ -28,8 +28,8 @@ Every ruleset directory must contain these files for the Rules Lawyer to functio
 |------|---------|
 | `system-notes.md` | What this system is, core design philosophy, tone, key mechanical concepts |
 | `quickref.md` | Generic mechanical rules: action economy, combat, conditions, core class features |
-| `house-rules.md` | DM standing rulings, Rule of Cool policy. Keep generic — campaign-specific rulings go in `campaign-extensions.md` |
-| `rulings-log.md` | Running log of every ruling made — accepted corrections and DM overrides |
+| `house-rules.md` | GM standing rulings, Rule of Cool policy. Keep generic — campaign-specific rulings go in `campaign-extensions.md` |
+| `rulings-log.md` | Running log of every ruling made — accepted corrections and GM overrides |
 | `character-template.md` | Template for creating a new PC in this system |
 
 ---
@@ -41,7 +41,7 @@ Every ruleset directory must contain these files for the Rules Lawyer to functio
 - **Character sheets (mechanical summary)**: Current stats, HP, spell slots, key ability details with exact numbers — updated when characters level up
 - **Active optional rules**: Which optional rules are on or off for this campaign (e.g. flanking, lingering injuries)
 - **Party-specific interactions**: Edge cases or ability interactions specific to this party's composition
-- **DM clarifications**: Rulings that are specific to this campaign's world or tone
+- **GM clarifications**: Rulings that are specific to this campaign's world or tone
 
 When creating a new campaign from this template, replace `campaign-extensions.md` with one describing your own party.
 
@@ -78,8 +78,8 @@ This architecture works with any tabletop RPG system that has:
 - Some form of action resolution (dice, cards, narrative moves, etc.)
 - Some form of turn structure
 
-It has been designed with D&D-adjacent systems in mind but can accommodate:
-- **D&D-likes**: Pathfinder, OSR games, Level Up: Advanced 5e
+It has been designed with fifth-edition systems in mind but can accommodate:
+- **5e-likes**: Pathfinder, OSR games, Level Up: Advanced 5e
 - **PbtA systems**: Dungeon World, Masks, Blades in the Dark
 - **Narrative systems**: Daggerheart, Ironsworn, Trophy
 - **Anything else**: adapt the quickref and character-template to fit the system's actual mechanics
