@@ -22,4 +22,30 @@ The adventure has not yet begun.
 
 ---
 
-_Session 1 summary will be added here after completion._
+## Session 1 — The Resting Wheel, The Brewery, The Ashwood
+
+The party spent their first evening in Briarfen doing what turned out to be the right thing: talking to people.
+
+In the common room of The Resting Wheel, they were approached by a former Monster Hunters' Guild man named Edric Holt, who had been sitting alone for three weeks with field notes he didn't know who to give. He confirmed what Grunka had already felt: the Ashwood was wrong. The wolves weren't rabid — they were confused, gathered at a ruin called Old Millhouse, listening to something underground. The Guild records from fifty years ago called this "Stage Two Emergence." Stage Two preceded the first disappeared villages by four days, the last time.
+
+Edric also told them about Heldra Stoneback — one block east at the Stoneback Brewery, last surviving active member of the Brightblade Company, and the one person who might know more than any of them.
+
+Zyx, who had been sitting in his armchair one block from Heldra for six days without going to see her, led them to the brewery.
+
+Heldra confirmed what Zyx had feared. She had kept her Void Shard — a fragment of the sealing ritual — under the brewery floor for eighty years. Three months ago it started getting warm. Two weeks ago it was gone: stolen in the night, past Brother Tolman's wards, by someone who knew exactly what they were looking for and where it was. The same night, the air to the north went wrong. The same night, Mosswick went silent.
+
+Zyx told the party — for the first time — about the Void Shards. Six shards, one per Brightblade Company member. Two destroyed with Aldric and Senna in the sealing. Four dispersed. Now two are confirmed missing: Heldra's and one that Zyx had thought secured. Someone is collecting them. If brought together the wrong way, the seal on the Void King doesn't strengthen — it breaks.
+
+Heldra sent them to Mosswick. She said: find the other two shards before they do.
+
+In the morning, before departure, Zyx examined the cold room under the brewery where the shard had been kept. The wards had not been broken — they had been bypassed, cleanly, by something with either deep knowledge of the ward structure or access to void magic that doesn't care about light-aligned wards. An agent, not a random thief.
+
+Half a day into the Ashwood, they found Old Millhouse. Seventeen wolves, from different territories, gathered in a confused ring around a ruin with warm stones. A crack in the earth, east-west, with the wrong kind of air rising from it. Reginald used Divine Sense and felt the presence below — not a fiend, not categorizable, but aware. It noticed him back.
+
+Zyx sealed the crack. Three to seven days before it opens again. The wolves began to disperse.
+
+Grunka told the party that whatever is at Old Millhouse is smaller than what she felt in the Krethian hills twenty years ago. That thing is still there.
+
+They left the Ashwood with Mosswick an hour ahead.
+
+The party now understands what they are actually dealing with. The cheese tribute is not the story.

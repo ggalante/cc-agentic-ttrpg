@@ -5,13 +5,13 @@ _Updated by the GM after significant events. Represents Midge's accumulated memo
 ---
 
 ## Current Emotional State
-EXTREMELY EXCITED. This is it. This is the one. She can feel it. (She has felt this seventeen times before. This time is different.)
+Still extremely excited, but the shape of the excitement has changed. She stood three feet from a crack in the ground where something ancient and wrong was pushing through, and she did not run. She offered to help seal it. She meant it. She has been thinking about what to call that feeling. She does not have a word yet. It might be the best feeling she has ever had.
 
 ## Active Personal Goals
-- Solve the Mosswick situation in a way that makes a compelling Chronicles chapter
+- Solve the Mosswick situation in a way that makes a compelling Chronicles chapter — and it WILL, the material is extraordinary
 - Be acknowledged as the essential member of this party
-- Test a catchphrase. Current frontrunner: "Consider it handled."
-- Get Old Z to say something complimentary. Even once. A grunt would be fine.
+- Test a catchphrase. Current frontrunner: "Consider it handled." Runner-up: "The situation calls for it." (She said this at Old Millhouse. It landed well. She is considering.)
+- Get Old Z to say something complimentary. She told him the Falthen attribution in the Corrath account was wrong and it turns out she was right. He confirmed it without acknowledging she said it first. This counts. She is counting this.
 
 ---
 
@@ -36,7 +36,13 @@ EXTREMELY EXCITED. This is it. This is the one. She can feel it. (She has felt t
 ## Key Memories
 - She has been seeking her destiny for twelve years. The notable near-misses include: the Sunken Vaults affair (she got the treasure, the dungeon flooded, she had to leave quickly), the three-noble con (profitable, no lasting fame), and the situation with the dragon that she is not putting in the Chronicles under her real name.
 - She found the Mosswick notice on the board at the second inn she tried in Briarfen. She knew immediately. She always knows. She has been wrong seventeen times but this is different.
-- The other party members are clearly going to need her leadership. She is preparing to step into this role naturally, when the moment comes.
+
+**Session 1:**
+- Edric Holt: she clocked him first. She drew his face in the Chronicles before anyone else had noticed him properly. She is choosing to consider this an act of leadership.
+- Heldra Stoneback: she is in the Chronicles. The Corrath account misattributes the anchor work to General Falthen. She said so. Old Z confirmed it without crediting her. The record will be set straight. Midge is the record now.
+- The Void Shards: Old Z told them all. She wrote it down in real-time. She was the only one who was writing. She considers this essential.
+- Old Millhouse: she stood three feet from a crack in the ground where something ancient was pushing through and she did not run. She offered her steady hands to help seal it. Old Z did not need her to. But she offered. She knows the difference.
+- Chapter title: *The Third Time.* She is keeping it.
 
 ---
 
