@@ -5,7 +5,7 @@ _Updated by the GM after significant events. Represents Zyx's accumulated memori
 ---
 
 ## Current Emotional State
-Resigned but engaged. The signs are what he feared. The Portent dice this morning were a 3 and a 17 — not a good spread.
+Lighter than expected. He told them about the shards. He did not anticipate how much weight that had been. He has been carrying operational knowledge of an extinction-level threat alone for three months. The party now carries it with him. This does not solve the problem. It does make the silence somewhat easier to sit with.
 
 ## Active Personal Goals
 - Stop the third one
@@ -36,9 +36,19 @@ Resigned but engaged. The signs are what he feared. The Portent dice this mornin
 - The Brightblade Company, fifty years ago: he declined to join. He sent notes. He has, occasionally, wondered if he should have been there.
 - His cottage, which he was finally getting clean when the wards flickered. He left a pot on the stove. He hopes it is fine.
 
+**Session 1:**
+- Said Aldric and Senna's names in front of Heldra. She said them back. That was the right thing to do and it was harder than he expected.
+- He was forty meters back at the sealing and he has never corrected the record about Falthen. He told Heldra. He also told Midge, incidentally, which means it will end up in the Chronicles, which means the record will be corrected whether he intended it or not. He is not certain how he feels about this.
+- He told the party about the Void Shards. It needed to be done. It was easier than he expected. The boy opened his Ethics Journal and then closed it without writing anything, which was the correct response.
+- Old Millhouse: crack sealed. Standard procedure. He has done this twice before. The third time is never the last.
+
 ---
 
 ## Notes
-- Must check: is Heldra Stoneback still in Briarfen? She knows where her shard went. He has been avoiding this conversation for reasons he acknowledges are not strategic.
+- Heldra: shard confirmed stolen two weeks ago. Bypassed Tolman's wards cleanly. An agent with void-magic access or deep knowledge of the ward structure. This is worse than opportunistic theft.
+- Two shards missing. Four total dispersed. Two locations unknown. Finding them before the collector does is now the campaign's operational priority alongside Mosswick.
 - The dragon in Mosswick is not the problem. Do not let the party kill the dragon.
-- He rolled a 3 and a 17 this morning. Save the 3 for something that absolutely must fail. Save the 17 for something that absolutely must succeed.
+- Portent dice: 3 and 17. Not used this session. Reset at next dawn.
+- Old Millhouse crack sealed. Three to seven days. Noted for Edric Holt — he should be told so he can arrange someone to monitor it. He kept records for thirty-one years. He will want to be useful.
+- Reginald's Divine Sense found the presence. The presence noticed him back. This is relevant. The emerging awareness of the Void King's influence is beginning to take an interest in specific individuals. Will monitor.
+- He did not examine why he avoided going to see Heldra for six days. He still has not examined this. He acknowledges that he will not examine it, which is its own kind of examination.
